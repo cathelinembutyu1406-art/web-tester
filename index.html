@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c10">
+  <title>VYBE+ | Stream Your World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">VYBE<span>+</span></a>
+    <div class="header-actions">
+      <button id="searchToggle" class="icon-btn" aria-label="Search">⌕</button>
+      <button id="profileBtn" class="icon-btn avatar" aria-label="Profile">V</button>
+    </div>
+  </header>
+
+  <div id="searchWrap" class="search-wrap">
+    <input id="searchInput" type="search"
+      placeholder="Search movies, series, genres..."
+      aria-label="Search titles">
+  </div>
+
+  <main class="container">
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <span class="eyebrow">VYBE+ ORIGINAL</span>
+        <h1 id="heroTitle">Beyond the Horizon</h1>
+        <div class="hero-meta" id="heroMeta">2026 · Sci-Fi · ★ 8.9</div>
+        <p id="heroDescription">
+          A new world. One final mission. Everything changes beyond the horizon.
+        </p>
+        <div class="hero-actions">
+          <button id="heroPlay" class="btn primary">▶ Watch now</button>
+          <button id="heroInfo" class="btn secondary">ⓘ More info</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="section-heading">
+        <h2>Discover</h2>
+        <span id="resultCount" class="muted"></span>
+      </div>
+
+      <div class="filters" id="typeFilters">
+        <button class="filter active" data-type="All">All</button>
+        <button class="filter" data-type="Movie">Movies</button>
+        <button class="filter" data-type="Series">Series</button>
+      </div>
+
+      <div class="categories" id="categories">
+        <button class="category active" data-genre="All">For you</button>
+        <button class="category" data-genre="Action">Action</button>
+        <button class="category" data-genre="Sci-Fi">Sci-Fi</button>
+        <button class="category" data-genre="Drama">Drama</button>
+        <button class="category" data-genre="Thriller">Thriller</button>
+        <button class="category" data-genre="Adventure">Adventure</button>
+        <button class="category" data-genre="Comedy">Comedy</button>
+        <button class="category" data-genre="Documentary">Documentary</button>
+      </div>
+
+      <div id="catalog" class="movie-grid"></div>
+    </section>
+
+    <section class="section" id="trending">
+      <div class="section-heading">
+        <h2>Trending now</h2>
+        <span class="muted">Popular picks</span>
+      </div>
+      <div id="trendingGrid" class="movie-grid"></div>
+    </section>
+
+    <section class="section" id="watchlist">
+      <div class="section-heading">
+        <h2>My watchlist</h2>
+        <span id="watchlistCount" class="muted">0 titles</span>
+      </div>
+      <div id="watchlistGrid" class="movie-grid"></div>
+    </section>
+
+    <footer>
+      <a class="logo" href="#">VYBE<span>+</span></a>
+      <p>Your entertainment. Your vibe.</p>
+      <p>Demo app. Use licensed content for your production service.</p>
+    </footer>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button class="nav-item active" data-target="home">
+      <span>⌂</span>Home
+    </button>
+    <button class="nav-item" data-target="explore">
+      <span>◉</span>Explore
+    </button>
+    <button class="nav-item" data-target="trending">
+      <span>↗</span>Trending
+    </button>
+    <button class="nav-item" data-target="watchlist">
+      <span>♡</span>My list
+    </button>
+  </nav>
+
+  <div id="detailsModal" class="modal" role="dialog"
+    aria-modal="true" aria-label="Title details">
+    <div class="dialog details-dialog">
+      <button class="close" data-close="detailsModal"
+        aria-label="Close">×</button>
+      <img id="detailPoster" class="detail-poster" alt="Movie poster">
+      <div class="detail-content">
+        <span class="eyebrow">VYBE+ DISCOVERY</span>
+        <h2 id="detailTitle"></h2>
+        <div id="detailMeta" class="hero-meta"></div>
+        <p id="detailDescription"></p>
+        <div class="hero-actions">
+          <button id="detailPlay" class="btn primary">▶ Play</button>
+          <button id="detailSave" class="btn secondary">＋ My list</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="playerModal" class="modal" role="dialog"
+    aria-modal="true" aria-label="Video player">
+    <div class="dialog player-dialog">
+      <button class="close" data-close="playerModal"
+        aria-label="Close">×</button>
+      <span class="eyebrow">NOW STREAMING</span>
+      <h2 id="playerTitle">Now playing</h2>
+      <video id="videoPlayer" controls playsinline preload="metadata"></video>
+      <p class="muted">
+        Demo video. Replace the sample URL with your own licensed video.
+      </p>
+    </div>
+  </div>
+
+  <div id="profileModal" class="modal" role="dialog"
+    aria-modal="true" aria-label="Profile">
+    <div class="dialog profile-dialog">
+      <button class="close" data-close="profileModal"
+        aria-label="Close">×</button>
+      <span class="eyebrow">YOUR SPACE</span>
+      <h2>Welcome to VYBE+</h2>
+      <p id="profileStats" class="muted"></p>
+      <button id="profileWatchlist" class="btn primary">
+        View my watchlist
+      </button>
+      <p class="muted">This demo does not create an online account.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
